@@ -3,5 +3,8 @@
   "packageManager": "yarn@4.0.1",
   "dependencies": {
     "jest": "^29.7.0"
+  },
+  "scripts": {
+    "node": "node"
   }
 }
