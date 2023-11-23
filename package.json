@@ -5,6 +5,7 @@
     "jest": "^29.7.0"
   },
   "scripts": {
-    "node": "node"
+    "node": "node",
+    "test": "jest"
   }
 }
