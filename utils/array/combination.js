@@ -1,4 +1,4 @@
-module.exports.combination = (list, k) => {
+function combination(list, k) {
   const results = [];
 
   function calculate(start, result) {
@@ -15,4 +15,6 @@ module.exports.combination = (list, k) => {
   calculate(0, []);
 
   return results;
-};
+}
+
+module.exports = { combination };
