@@ -1,20 +1,18 @@
 function combination(list, k) {
-  const results = [];
-
-  function calculate(start, result) {
-    if (result.length === k) {
-      results.push(result);
-      return;
-    }
-
-    for (let i = start; i < list.length; i++) {
-      calculate(i + 1, [...result, list[i]]);
-    }
+  if (k === 1) {
+    return list.map((value) => [value]);
   }
 
-  calculate(0, []);
+  const result = [];
 
-  return results;
+  list.forEach((head, idx, arr) => {
+    const tail = arr.slice(idx + 1);
+    const subCombination = combination(tail, k - 1);
+    const mainComination = subCombination.map((value) => [head, ...value]);
+    result.push(...mainComination);
+  });
+
+  return result;
 }
 
 module.exports = { combination };
