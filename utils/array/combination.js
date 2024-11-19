@@ -7,8 +7,7 @@ function combination(list, n) {
     const tail = arr.slice(idx + 1);
     const subCombination = combination(tail, n - 1);
     const mainCombination = subCombination.map((numArr) => [head, ...numArr]);
-    result.push(...mainCombination);
-    return result;
+    return [...result, ...mainCombination];
   }, []);
 }
 
